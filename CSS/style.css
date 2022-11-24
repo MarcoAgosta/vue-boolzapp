@@ -1,0 +1,118 @@
+.background{
+    background-color: #E5DDD5;
+    width: 100vw;
+    height: 100vh;
+}
+
+.green-bar{
+    height: 100px;
+    background-color: #005C4B;
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+}
+
+.div-profilo{
+    background-color: #EEEEEE;
+}
+
+.contenitore{
+    z-index: 10;
+    height: 90vh;
+    width: 85%;
+}
+
+.foto-profilo{
+    border-radius: 100%;
+}
+
+.pulsante-profilo{
+    background-color: #EEEEEE;
+    color: gray;
+    border: none;
+}
+
+.azzurro{
+    background-color: rgb(55, 182, 182);
+}
+
+.notifiche-button{
+    background-color: white;
+    color: rgb(55, 182, 182);
+    border-radius: 100%;
+    border: none;
+    padding: .8rem;
+    font-size: 1.3rem;
+    height: 3.3rem;
+}
+
+.notifiche-button i{
+    bottom: 2px;
+}
+
+.azzurro a{
+    color: rgb(95, 95, 95);
+}
+
+.cercatore button{
+    border: 0;
+    background-color: white;
+    width: 15%;
+    color: darkgray;
+}
+
+.cercatore input{
+    border: 0;
+    width: 85%;
+    height: 32px;
+}
+
+.div-white{
+    background-color: rgb(238, 238, 238);
+}
+
+.lista-contatti{
+    overflow: auto;
+}
+
+.card-contatto{
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    background-color: rgb(244, 244, 244);
+}
+
+.card-contatto p{
+    font-size: .8rem;
+    color: darkgray;
+}
+
+.utente-attivo{
+    background-color: #EEEEEE;
+    border-left: 1px solid darkgray ;
+}
+
+.utente-attivo p{
+    color: gray;
+}
+
+.chat{
+    background-image: url(../img/mine.jpg);
+    overflow-y: scroll;
+}
+
+.text-chat{
+    background-color: rgb(207, 196, 186);
+    height: 70px;
+}
+
+.text-chat button{
+    background-color: rgb(207, 196, 186);
+    border: 0;
+    color: gray;
+}
+
+.text-chat input{
+    border: 0;
+    border-radius: 7px;
+    height: 80%;
+}
