@@ -83,5 +83,27 @@ createApp({
               },
               ],
         }
+    },
+    
+    methods:{
+
+        indiceUltimoMessaggio: function(utente){
+            const lunghezzaMessaggi = utente.messages.length
+            const indiceUltimo = lunghezzaMessaggi - 1
+
+            return indiceUltimo
+        },
+
+        ultimoMessaggio: function(persona){
+            const indiceFinale = this.indiceUltimoMessaggio(persona);
+
+            return persona.messages[indiceFinale].message
+        },
+
+        ultimaData: function(persona){
+            const indiceFinale = this.indiceUltimoMessaggio(persona);
+
+            return persona.messages[indiceFinale].date
+        }
     }
 }).mount('#app')
