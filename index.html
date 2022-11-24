@@ -16,6 +16,7 @@
             <div class="green-bar w-100"></div>
             <div class="contenitore position-relative m-auto pt-3">
                 <div class="row h-100">
+
                     <div class="col-4 p-0 d-flex flex-column h-100">
                         <div class="row div-profilo p-1 w-100 m-0 flex-shrink-1">
                             <div class="col-2">
@@ -87,8 +88,21 @@
                             </div>
                         </div>
 
-                        <div class="chat flex-grow-1">
-                            
+                        <div class="chat flex-grow-1 d-flex flex-column-reverse">
+                            <div class="row w-100 pl-0 messaggio">
+                                <div v-for="messaggio in listaAmici[0].messages" class="mb-3 d-flex align-items-center position-relative"
+                                :class="(messaggio.status == 'sent') ? 'green' : 'gray'">
+                                    <p class="w-100 m-3">
+                                        {{messaggio.message}}
+                                    </p>
+                                    <span class="position-absolute"> 
+                                        {{messaggio.date}}
+                                    </span>
+                                </div>
+
+                    
+                               
+                            </div>
                         </div>
 
                         <div class="row w-100 m-0 flex-shrink-1 text-chat">

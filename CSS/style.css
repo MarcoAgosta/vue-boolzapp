@@ -116,3 +116,31 @@
     border-radius: 7px;
     height: 80%;
 }
+
+.messaggio{
+    --bs-gutter-x: 0;
+}
+
+.messaggio span{
+    bottom: 2px;
+    right: 8px;
+    font-size: .7rem;
+    color: darkgray;
+}
+
+.green{
+    background-color: green;
+    border-radius: 10px;
+    margin-left: 58.33333333%;
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+.gray{
+    background-color: lightgray;
+    border-radius: 10px;
+    margin-left: 8.33333333%;
+    margin-right: 50%;
+    flex: 0 0 auto;
+    width: 33.3333333%;
+}
