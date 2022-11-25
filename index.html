@@ -51,7 +51,9 @@
 
                             <div class="lista-contatti flex-grow-1"> 
 
-                                <div v-for="amico in listaAmici" class="row w-100 m-0 card-contatto p-1">
+                                <div v-for="(amico, i) in listaAmici" class="row w-100 m-0 card-contatto p-1"
+                                @click="rendiAttivo(i)"
+                                :class="(i==this.utenteAttivo) ? 'attivo' : ''">
                                     <div class="col-3 d-flex justify-content-center h-100">
                                         <img :src="'img/avatar'+amico.avatar+'.jpg'" :alt="'immagine profilo di'+amico.name" class="w-75 h-100 foto-profilo">
                                     </div>
@@ -73,12 +75,12 @@
                     <div class="col-8 p-0 d-flex flex-column">
                         <div class="row w-100 m-0 utente-attivo flex-shrink-1">
                             <div class="col-1">
-                                <img src="img/avatar_1.jpg" alt="immagine utente in chat" class="w-100 foto-profilo m-1">
+                                <img :src="`img/avatar${listaAmici[utenteAttivo].avatar}.jpg`" alt="immagine utente in chat" class="w-100 foto-profilo m-1">
                             </div>
 
                             <div class="col-9 d-flex flex-column justify-content-center">
-                                <h5 class="m-0">Michele</h5>
-                                <p class="m-0">Ultimo accesso oggi alle 12.00</p>
+                                <h5 class="m-0">{{listaAmici[utenteAttivo].name}}</h5>
+                                <p class="m-0">Ultimo accesso alle {{ultimaData(listaAmici[utenteAttivo])}}</p>
                             </div>
 
                             <div class="col-2 d-flex justify-content-center align-items-center p-0">
@@ -90,7 +92,7 @@
 
                         <div class="chat flex-grow-1 d-flex flex-column-reverse">
                             <div class="row w-100 pl-0 messaggio">
-                                <div v-for="messaggio in listaAmici[0].messages" class="mb-3 d-flex align-items-center position-relative"
+                                <div v-for="messaggio in listaAmici[utenteAttivo].messages" class="mb-3 d-flex align-items-center position-relative"
                                 :class="(messaggio.status == 'sent') ? 'green' : 'gray'">
                                     <p class="w-100 m-3">
                                         {{messaggio.message}}

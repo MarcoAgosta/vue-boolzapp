@@ -82,6 +82,7 @@ createApp({
                 ],
               },
               ],
+            utenteAttivo: 0
         }
     },
     
@@ -104,6 +105,10 @@ createApp({
             const indiceFinale = this.indiceUltimoMessaggio(persona);
 
             return persona.messages[indiceFinale].date
-        }
+        },
+
+        rendiAttivo: function(indice){
+          this.utenteAttivo = indice
+        },
     }
 }).mount('#app')

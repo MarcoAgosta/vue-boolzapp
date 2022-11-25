@@ -24,6 +24,7 @@
 
 .foto-profilo{
     border-radius: 100%;
+    object-fit: cover;
 }
 
 .pulsante-profilo{
@@ -76,7 +77,6 @@
 }
 
 .card-contatto{
-    border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
     background-color: rgb(244, 244, 244);
 }
@@ -143,4 +143,8 @@
     margin-right: 50%;
     flex: 0 0 auto;
     width: 33.3333333%;
+}
+
+.attivo{
+    background: rgba(170, 170, 170, 0.514);
 }
