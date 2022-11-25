@@ -114,7 +114,11 @@
 
                             
                             <div class="col-10 p-2 d-flex justify-content-left align-items-center">
-                                <input type="text" class="w-100" placeholder="Scrivi un messaggio">
+                                <form action="" class="w-100 h-100 mt-2"
+                                @submit.prevent="inviaMessaggio()">
+                                <input type="text" class="w-100" placeholder="Scrivi un messaggio"
+                                v-model="nuovaStringa">
+                                </form>
                             </div>
 
                             <div class="col-1 d-flex justify-content-center align-items-center">

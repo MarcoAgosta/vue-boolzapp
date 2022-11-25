@@ -82,7 +82,9 @@ createApp({
                 ],
               },
               ],
-            utenteAttivo: 0
+            utenteAttivo: 0,
+
+            nuovaStringa: ""
         }
     },
     
@@ -107,8 +109,33 @@ createApp({
             return persona.messages[indiceFinale].date
         },
 
+        autoRisposta: function(){
+          const today = new Date()
+          const nuovaRisposta={
+            date: today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate()+' '+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+            message: "ok",
+            status: "received"
+          }
+
+          this.listaAmici[this.utenteAttivo].messages.push(nuovaRisposta)
+        },
+
         rendiAttivo: function(indice){
           this.utenteAttivo = indice
         },
+
+        inviaMessaggio: function(){
+          const today = new Date();
+          const nuovoMessaggio={
+            date: today.getFullYear()+'/'+(today.getMonth()+1)+'/'+today.getDate()+' '+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+            message: this.nuovaStringa,
+            status: 'sent',
+          }
+
+          this.listaAmici[this.utenteAttivo].messages.push(nuovoMessaggio)
+          this.nuovaStringa=""
+
+          setTimeout(this.autoRisposta, 1000)
+        }
     }
 }).mount('#app')
