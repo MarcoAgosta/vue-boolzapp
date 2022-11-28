@@ -45,15 +45,20 @@
 
                         <div class="w-100 m-0 div-white d-flex flex-column flex-grow-1 overflow-auto">
                             <div class="p-2 cercatore flex-shrink-1">
-                                <button class="pt-1 pb-1"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat">
+                                <form action=""
+                                @submit.prevent="selezionaUtenti()">
+                                  <button class="pt-1 pb-1"><i class="fa-solid fa-magnifying-glass"
+                                    @click.prevent="selezionaUtenti()"></i></button>
+                                  <input type="text" name="" id="" placeholder="Cerca o inizia una nuova chat"
+                                  v-model="utenteStringa">
+                                </form>
                             </div>
 
                             <div class="lista-contatti flex-grow-1"> 
 
                                 <div v-for="(amico, i) in listaAmici" class="row w-100 m-0 card-contatto p-1"
-                                @click="rendiAttivo(i)"
-                                :class="(i==this.utenteAttivo) ? 'attivo' : ''">
+                                :class="(amico.visible) ? '' : 'invisible', (i==this.utenteAttivo) ? 'attivo' : ''"
+                                @click="rendiAttivo(i)">
                                     <div class="col-3 d-flex justify-content-center h-100">
                                         <img :src="'img/avatar'+amico.avatar+'.jpg'" :alt="'immagine profilo di'+amico.name" class="w-75 h-100 foto-profilo">
                                     </div>

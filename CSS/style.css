@@ -148,3 +148,7 @@
 .attivo{
     background: rgba(170, 170, 170, 0.514);
 }
+
+.invisible{
+    display: none;
+}

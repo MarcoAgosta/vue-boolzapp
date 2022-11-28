@@ -84,7 +84,9 @@ createApp({
               ],
             utenteAttivo: 0,
 
-            nuovaStringa: ""
+            nuovaStringa: "",
+
+            utenteStringa: ""
         }
     },
     
@@ -136,6 +138,17 @@ createApp({
           this.nuovaStringa=""
 
           setTimeout(this.autoRisposta, 1000)
+        },
+
+        selezionaUtenti(){
+          const stringa = this.utenteStringa
+           this.listaAmici.forEach(function(amico){
+             if (amico.name.toLowerCase().includes(stringa.toLowerCase())){
+               amico.visible=true
+             } else {
+               amico.visible=false
+             }
+           });
         }
     }
 }).mount('#app')
