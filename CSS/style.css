@@ -98,6 +98,7 @@
 .chat{
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
+    max-height: 73.3vh;
 }
 
 .text-chat{
